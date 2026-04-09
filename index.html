@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <style>
+        /* CSS Langsung di dalam file agar offline-ready */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f1ea;
+            color: #333;
+            text-align: center;
+        }
+
+        .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000&auto=format&fit=crop'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .content {
+            padding: 50px 20px;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 { font-family: 'Georgia', serif; font-size: 2.5em; margin-bottom: 10px; }
+        h2 { color: #8d6e63; }
+        .date { font-weight: bold; font-size: 1.2em; color: #5d4037; }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #8d6e63;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        .section { margin-bottom: 40px; }
+        footer { padding: 20px; font-size: 0.8em; color: #777; }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 15px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox sederhana untuk melihat foto lebih besar */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="cover">
+        <h3>UNDANGAN PERNIKAHAN</h3>
+        <h1>Romeo & Juliet</h1>
+        <p>12 Desember 2026</p>
+        <a href="#isi" class="btn">Buka Undangan</a>
+    </div>
+
+
+        <div class="section">
+            <h2>Momen Bahagia</h2>
+            <div class="gallery-container">
+                <img src="foto1.jpg" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="foto2.jpg" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="foto3.jpg" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="foto4.jpg" class="gallery-item" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+
+        <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+            <img id="lightbox-img" src="">
+        </div>
+
+      <div id="isi" class="content">
+        <hr style="border: 0.5px solid #eee; margin: 40px 0;">
+
+        <div class="section" style="background: #fdfaf7; padding: 20px; border-radius: 10px;">
+            <h2>Konfirmasi Kehadiran (RSVP)</h2>
+            <form id="rsvpForm" style="text-align: left;">
+                <label>Nama Tamu:</label><br>
+                <input type="text" id="nama" style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px;" placeholder="Masukkan nama Anda" required><br>
+                
+                <label>Status Kehadiran:</label><br>
+                <select id="status" style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px;">
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                    <option value="Masih Ragu">Masih Ragu</option>
+                </select><br>
+
+                <label>Jumlah Tamu:</label><br>
+                <input type="number" id="jumlah" style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px;" value="1" min="1"><br>
+
+                <button type="button" onclick="kirimRSVP()" class="btn" style="width: 100%; border: none; cursor: pointer;">Kirim via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+        <hr style="border: 0.5px solid #eee;">
+
+        <div class="section">
+            <h2>Acara</h2>
+            <p class="date">Sabtu, 12 Desember 2026</p>
+            <p><strong>Akad Nikah:</strong> 09.00 - 10.00 WIB</p>
+            <p><strong>Resepsi:</strong> 11.00 - Selesai</p>
+            <p>📍 Gedung Serbaguna Indah<br>Jl. Melati No. 123, Jakarta</p>
+        </div>
+
+        <div class="section">
+            <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+            <p>Terima Kasih.</p>
+        </div>
+    </div>
+
+    <footer>
+        Created with ❤️ by Digital Invitation
+    </footer>
+
+</body>
+</html>
+
+
+
+
+    <script>
+        function kirimRSVP() {
+            // Ambil data dari form
+            const nama = document.getElementById('nama').value;
+            const status = document.getElementById('status').value;
+            const jumlah = document.getElementById('jumlah').value;
+            
+            // Nomor WhatsApp Anda (Ganti dengan nomor Anda, awali dengan 62)
+            const noWA = "6281234567890"; 
+
+            if(nama === "") {
+                alert("Mohon isi nama Anda.");
+                return;
+            }
+
+            // Susun teks pesan
+            const pesan = `Halo, saya ** ingin mengonfirmasi kehadiran.\n\n` +
+                          `Status: **\n` +
+                          `Jumlah Tamu: * orang*\n\n` +
+                          `Terima kasih!`;
+
+            // Encode pesan untuk URL
+            const url = `https://wa.me/?text=`;
+
+            // Buka link WhatsApp
+            window.open(url, '_blank');
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+    </script>
+
