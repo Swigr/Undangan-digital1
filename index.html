@@ -379,9 +379,38 @@
     font-size: 1.4rem; font-weight: bold; color: var(--gold);
     letter-spacing: 2px; margin: 10px 0; display: block;
 }
+		/* --- Efek Salju Turun --- */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Agar tidak menghalangi tombol klik */
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    user-select: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
     </style>
 </head>
 <body>
+	<div class="snow-container" id="snow-container"></div>
+
 <div id="opening-cover">
     <h2 style="font-family: 'Cinzel', serif; letter-spacing: 3px;">THE WEDDING OF</h2>
     <h1 style="font-family: 'Great Vibes', cursive; font-size: 4rem; margin: 20px 0;">Nanda & Pasangan</h1>
@@ -803,6 +832,39 @@ function copyText(id) {
     window.onload = () => {
         document.body.style.overflow = 'hidden';
     };
+const snowContainer = document.getElementById("snow-container");
+const particles = ["❅", "❆", "❄", "•"]; // Variasi bentuk salju
+
+function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    
+    // Pilih bentuk salju secara acak
+    snowflake.innerHTML = particles[Math.floor(Math.random() * particles.length)];
+    
+    // Posisi horizontal acak
+    snowflake.style.left = Math.random() * 100 + "vw";
+    
+    // Kecepatan jatuh acak (antara 5s sampai 15s)
+    const duration = Math.random() * 10 + 5 + "s";
+    snowflake.style.animationDuration = duration;
+    
+    // Ukuran acak
+    snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+    
+    // Transparansi acak
+    snowflake.style.opacity = Math.random();
+
+    snowContainer.appendChild(snowflake);
+
+    // Hapus salju setelah selesai jatuh agar tidak menumpuk di memori
+    setTimeout(() => {
+        snowflake.remove();
+    }, parseFloat(duration) * 1000);
+}
+
+// Buat salju setiap 300 milidetik
+setInterval(createSnowflake, 300);
 
     </script>
 </body>
