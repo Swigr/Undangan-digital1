@@ -1116,9 +1116,9 @@ width: 100%;
             div.style.padding = "15px 0";
             div.style.borderBottom = "1px solid #ddd";
             div.innerHTML = `
-                <div style="font-weight: bold; font-size: 1rem; color: #000;"></div>
-                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;"></div>
-                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i></small>
+                <div style="font-weight: bold; font-size: 1rem; color: #000;">${data.pengirim}</div>
+                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;">${data.pesan}</div>
+                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i>${tgl}</small>
             `;
             container.appendChild(div);
         });
