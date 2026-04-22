@@ -150,10 +150,16 @@ section.mempelai-section .couple-profile p {
     width: 170px; 
     height: 250px; 
     object-fit: cover; 
-border: 3px solid #000; /* Garis hitam dalam yang tebal */
-    
+border: 2px solid #e0e0e0;
     border-radius: 100px; 
     display: block; 
+}
+.couple-img-outer {
+    border: 1px solid #e0e0e0;/* Garis luar tipis */
+    border-radius: 100px;
+    padding: 3px;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .couple-container { 
@@ -565,8 +571,8 @@ width: 100%;
     padding: 80px 20px;
     background-color: #010408;
     text-align: center;
-	width: 100%;
-	position: relative;
+    width: 100%;
+    position: relative;
 }
 
 .gift-container {
@@ -716,7 +722,7 @@ width: 100%;
     
     <div style="margin-bottom: 50px;">
         <h2 class="married-title" data-aos="fade-right">We Are Getting</h2>
-        <h1 class="married-script"data-aos="fade-left">Married</h1>
+        <h1 class="married-script" data-aos="fade-left">Married</h1>
         
         <div class="divider-container" data-aos="zoom-in">
             <div class="line-divider"></div>
@@ -734,14 +740,14 @@ width: 100%;
     </div>
 </section>
   <section class="mempelai-section">
-        <div class="ornament" data-aos="zoom-in">❦</div>
-        <h3 data-aos="zoom-out">Mempelai Pengantin</h3>
+        <h1 data-aos="zoom-out" style="color: white; font-size: 3rem; font-weight: 800; font-family: 'Herr Von Muellerhoff', cursive;">The Groom</h1>
         <div class="couple-container">
-            <div class="couple-profile"  data-aos="fade-right">
-                <div class="couple-img-container">
+            <div class="couple-profile" data-aos="fade-right">
+                
+                <div class="couple-img-container couple-img-outer">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Romeo" class="couple-img">
                 </div>
-                <h4>Romeo Montague</h4>
+                <h3 style="font-size: 1.5rem;">Fredy Supriadi</h3>
                 <p>Putra dari Bapak Montague <br> & Ibu Montague</p>
                 <div class="sosmed-link">
                     <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -753,11 +759,12 @@ width: 100%;
         <span class="ampersand">&</span>
         <div class="line-mempelai"></div>
     </div>
+ <h1 data-aos="zoom-out" style="color: white; font-size: 3rem; font-weight: 800; font-family: 'Herr Von Muellerhoff', cursive;">The Bride</h1>
             <div class="couple-profile" data-aos="fade-left">
-                <div class="couple-img-container">
+                <div class="couple-img-container couple-img-outer">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="Juliet" class="couple-img">
                 </div>
-                <h4>Juliet Capulet</h4>
+                <h3 style="font-size: 1.5rem;">Sri Wahyuningsih</h3>
                 <p>Putri dari Bapak Capulet <br> & Ibu Capulet</p>
                 <div class="sosmed-link">
                     <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -962,6 +969,21 @@ width: 100%;
     </div>
 </section>
 
+
+<section class="mempelai-section">
+        <div class="couple-container">
+            <div class="couple-profile"  data-aos="zoom-in">
+                <div class="couple-img-container couple-img-outer">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Romeo" class="couple-img">
+                </div>
+                <h2 style="color:white; margin-top: 30px;">Terimakasih</h2>
+ <p style="color:white; font-style: italic;">Wassalamu'alaikum Wr.Wb</p>
+ <h1 style="margin-top: 5px; color: white; font-size: 1.5rem; font-weight: 800;">Kami yang berbahagia</h1>
+ <p style="margin-top: 10px; color:white;">Kedua mempelai & Keluarga besar</p>
+            </div>
+        </div>
+    </section>
+
     <footer><p>© 2026 Romeo & Juliet Wedding</p></footer>
 
    <script type="module">
@@ -1032,9 +1054,9 @@ width: 100%;
             div.style.padding = "15px 0";
             div.style.borderBottom = "1px solid #ddd";
             div.innerHTML = `
-                <div style="font-weight: bold; font-size: 1rem; color: #000;">${data.pengirim}</div>
-                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;">${data.pesan}</div>
-                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i>${tgl}</small>
+                <div style="font-weight: bold; font-size: 1rem; color: #000;"></div>
+                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;"></div>
+                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i></small>
             `;
             container.appendChild(div);
         });
