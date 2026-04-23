@@ -26,6 +26,7 @@
         body { font-family: 'Montserrat', sans-serif; background-color: var(--bg); color: var(--dark); line-height: 1.6; text-align: center; overflow-x: hidden; 
             max-width: 100%;
             position: relative;
+			-webkit-overflow-scrolling: touch;
         }
 
         /* --- Header & Countdown --- */
@@ -381,8 +382,7 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
 .timeline-section {
              position: relative;
                  overflow-x: hidden; 
-                 width: 100;
-            }
+                 width: 100%;
 }
 .timeline {
     position: relative;
@@ -653,7 +653,7 @@ width: 100%;
     width: 100%;
     height: 100%;
     pointer-events: none; /* Agar tidak menghalangi tombol klik */
-    z-index: 9999;
+    z-index: 2;
 }
 
 .snowflake {
@@ -728,10 +728,10 @@ width: 100%;
     <div class="snow-container" id="snow-container"></div>
 
 <div id="opening-cover">
-    <h2 style="font-family: 'Cinzel', serif; letter-spacing: 3px;">THE WEDDING OF</h2>
-    <h1 style="font-family: 'Great Vibes', cursive; font-size: 4rem; margin: 20px 0;">Nanda & Pasangan</h1>
-    <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
-    <h3 id="guest-name" style="margin: 10px 0;">Tamu Undangan</h3>
+    <h2 data-aos="zoom-in" style="font-family: 'Cinzel', serif; letter-spacing: 3px;">THE WEDDING OF</h2>
+    <h1 style="font-family: 'Great Vibes', cursive; font-size: 4rem; margin: 20px 0;" data-aos="zoom-out">Nanda & Pasangan</h1>
+    <p data-aos="zoom-in">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+    <h3 id="guest-name" style="margin: 10px 0;" data-aos="zoom-in">Tamu Undangan</h3>
     <button class="btn-open" onclick="openInvitation()">
         <i class="fas fa-envelope-open"></i> Buka Undangan
     </button>
@@ -1116,9 +1116,9 @@ width: 100%;
             div.style.padding = "15px 0";
             div.style.borderBottom = "1px solid #ddd";
             div.innerHTML = `
-                <div style="font-weight: bold; font-size: 1rem; color: #000;">${data.pengirim}</div>
-                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;">${data.pesan}</div>
-                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i>${tgl}</small>
+                <div style="font-weight: bold; font-size: 1rem; color: #000;"></div>
+                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;"></div>
+                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i></small>
             `;
             container.appendChild(div);
         });
@@ -1215,8 +1215,11 @@ function copyText(id) {
         // document.getElementById('myAudio').play();
         
         // Mengaktifkan scroll pada body (jika sebelumnya dimatikan)
-        document.body.style.overflow = 'auto';
-    }
+        // document.body.style.overflow = 'auto';
+		// document.documentElement.style.overflow = 'auto';
+		document.body.style.setProperty( 'overflow', 'visible', 'important');
+		document.documentElement.style.setProperty('overflow', 'visible', 'important');
+	}
 
     // Fungsi salin nomor rekening
     function copyText(id) {
