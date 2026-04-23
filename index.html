@@ -737,9 +737,27 @@ width: 100%;
     background: rgba(255,255,255,0.05);
 }
 
+        #music-control {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
     </style>
 </head>
 <body>
+    <audio id="myAudio" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-memories.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div id="music-control" onclick="toggleMusic()" style="position: fixed; bottom: 20px; left: 20px; z-index: 10002; background: rgba(0,0,0,0.5); width: 40px; height: 40px; border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; cursor: pointer; border: 1px solid var(--gold);">
+    <i id="music-icon" class="fas fa-music"></i>
+</div>
+
     <div class="snow-container" id="snow-container"></div>
 
 <div id="opening-cover">
@@ -1222,9 +1240,9 @@ function copyText(id) {
 
 
     // Fungsi untuk membuka undangan
-    function openInvitation() {
-        const cover = document.getElementById('opening-cover');
-        cover.classList.add('hide');
+    // H function openInvitation() {
+        // H const cover = document.getElementById('opening-cover');
+        // H cover.classList.add('hide');
         
         // Opsional: Mulai musik otomatis jika ada audio
         // document.getElementById('myAudio').play();
@@ -1232,9 +1250,28 @@ function copyText(id) {
         // Mengaktifkan scroll pada body (jika sebelumnya dimatikan)
         // document.body.style.overflow = 'auto';
         // document.documentElement.style.overflow = 'auto';
-        document.body.style.setProperty( 'overflow', 'visible', 'important');
-        document.documentElement.style.setProperty('overflow', 'visible', 'important');
-    }
+      // H  document.body.style.setProperty( 'overflow', 'visible', 'important');
+       // H document.documentElement.style.setProperty('overflow', 'visible', 'important');
+   
+        
+        function openInvitation() {
+    const cover = document.getElementById('opening-cover');
+    const audio = document.getElementById('myAudio');
+    const musicBtn = document.getElementById('music-control');
+    
+    cover.classList.add('hide');
+    
+    // Putar musik saat tombol diklik
+    audio.play();
+    
+    // Tampilkan tombol kontrol musik
+    musicBtn.style.display = 'flex';
+    
+    // Aktifkan scroll
+    document.body.style.overflow = 'visible';
+    document.documentElement.style.overflow = 'visible';
+}
+
 
     // Fungsi salin nomor rekening
     function copyText(id) {
@@ -1288,6 +1325,23 @@ function createSnowflake() {
 
 // Buat salju setiap 300 milidetik
 setInterval(createSnowflake, 300);
+
+
+
+        function toggleMusic() {
+    const audio = document.getElementById('myAudio');
+    const icon = document.getElementById('music-icon');
+    
+    if (audio.paused) {
+        audio.play();
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-music');
+    } else {
+        audio.pause();
+        icon.classList.remove('fa-music');
+        icon.classList.add('fa-pause');
+    }
+}
 
     </script>
 <script>
