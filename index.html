@@ -459,16 +459,15 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
 
         /* --- RSVP & Doa --- */
     #rsvp { background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                url('Images/bg-rsvp.jpg'); 
+                url('Images/Bg-rsvp.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-padding: 80px; 20px;
+padding: 80px 20px;
 width: 100%;
         position: relative;
         overflow-x: hidden;
     }
-     
     .std-title-rsvp {
     font-family: 'Herr Von Muellerhoff', cursive;
     font-size: clamp(3.5rem, 8vw, 4.5rem);
@@ -1155,9 +1154,9 @@ width: 100%;
             div.style.padding = "15px 0";
             div.style.borderBottom = "1px solid #ddd";
             div.innerHTML = `
-                <div style="font-weight: bold; font-size: 1rem; color: #000;">${data.pengirim}</div>
-                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;">${data.pesan}</div>
-                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i>${tgl}</small>
+                <div style="font-weight: bold; font-size: 1rem; color: #000;"></div>
+                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;"></div>
+                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i></small>
             `;
             container.appendChild(div);
         });
