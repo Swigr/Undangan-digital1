@@ -371,11 +371,82 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
         
        
 
-        /* --- Gallery --- */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .gallery-item { height: 250px; border-radius: 12px; overflow: hidden; cursor: pointer; border: 4px solid white; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }
+        /* Styling Section Galeri Keseluruhan */
+.gallery-section {
+    padding: 60px 0; /* Padding atas-bawah, 0 kiri-kanan agar full-width */
+    background-color: #f9f6f2; /* Sesuaikan dengan background undangan Anda */
+    overflow: hidden;
+}
+
+/* Judul Galeri (Gaya Moment Gallery) */
+.gallery-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.gallery-title {
+    font-family: 'Montserrat', sans-serif; /* Gunakan font sans-serif Anda */
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1rem;
+    color: #2c2c2c;
+    margin-bottom: -10px; /* Menempelkan dengan subtitle */
+}
+
+.gallery-subtitle {
+    font-family: 'Great Vibes', cursive; /* Gunakan font Latin/Script Anda */
+    font-size: 4rem;
+    color: #2c2c2c;
+    margin: 0;
+}
+
+/* Styling Grid Foto */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom sama rata */
+    gap: 1px; /* Jarak sangat tipis antar foto seperti di referensi */
+    width: 100%;
+}
+
+/* Styling Setiap Item Foto */
+.gallery-item {
+    width: 100%;
+    /* Mengatur tinggi foto agar konsisten, sesuaikan jika perlu */
+    aspect-ratio: 1 / 1; /* Membuat foto menjadi kotak sempurna */
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Foto memenuhi kotak tanpa distorsi */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Efek Zoom saat di-hover (opsional, untuk desktop) */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Styling Kutipan di Bawah Galeri */
+.gallery-quote {
+    text-align: center;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.gallery-quote p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+}
 
 
 /* --- Style Story Line / Timeline --- */
@@ -958,20 +1029,46 @@ width: 100%;
     </div>
 </section>
 
-    <section>
-        <h3>Galeri Foto</h3>
+   <section id="gallery" class="gallery-section">
+        <div class="gallery-header" data-aos="fade-up">
+            <h2 class="gallery-title">Moment</h2>
+            <h1 class="gallery-subtitle">Gallery</h1>      
+	<div class="gallery-container" style="Background: black;">
         <div class="gallery-grid" data-aos="zoom-in">
-            <div class="gallery-item"><img src="Images/G-1.png" onclick="previewImage(0)"></div>
-            <div class="gallery-item"><img src="Images/G-2.png" onclick="previewImage(1)"></div>
-            <div class="gallery-item"><img src="Images/G-3.png" onclick="previewImage(2)"></div>
-         <div class="gallery-item"><img src="Images/G-4.png" onclick="previewImage(3)"></div>
-		  <div class="gallery-item"><img src="Images/G-5.png" onclick="previewImage(4)"></div>
-		   <div class="gallery-item"><img src="Images/G-6.png" onclick="previewImage(5)"></div>
-		    <div class="gallery-item"><img src="Images/G-7.png" onclick="previewImage(6)"></div>
-			 <div class="gallery-item"><img src="Images/G-8.png" onclick="previewImage(7)"></div>
-			  <div class="gallery-item"><img src="Images/G-9.png" onclick="previewImage(8)"></div>
-		</div>
-    </section>
+            <div class="gallery-item">
+                <img src="Images/G-1.png" alt="Moment 1" onclick="previewImage(0)">
+            </div>
+            <div class="gallery-item">
+                <img src="Images/G-2.png" alt="Moment 2" onclick="previewImage(1)">
+            </div>
+            <div class="gallery-item">
+                <img src="Images/G-3.png" alt="Moment 3" onclick="previewImage(2)">
+            </div>
+            <div class="gallery-item">
+                <img src="Images/G-4.png" alt="Moment 4" onclick="previewImage(3)">
+            </div>
+            <div class="gallery-item">
+                <img src="Images/G-5.png" alt="Moment 5" onclick="previewImage(4)">
+            </div>
+            <div class="gallery-item">
+                <img src="Images/G-6.png" alt="Moment 6" onclick="previewImage(5)">
+            </div>
+			<div class="gallery-item">
+                <img src="Images/G-7.png" alt="Moment 7" onclick="previewImage(6)">
+            </div>
+			<div class="gallery-item">
+                <img src="Images/G-8.png" alt="Moment 8" onclick="previewImage(7)">
+            </div>
+			<div class="gallery-item">
+                <img src="Images/G-9.png" alt="Moment 9" onclick="previewImage(8)">
+            </div>
+            </div>
+	</div>
+        <div class="gallery-quote" data-aos="fade-up">
+            <p>“Loved you yesterday, love you still,<br>always have, always will.”</p>
+        </div>
+    </div>
+</section>
 
     <section id="rsvp" >
     <h2 data-aos="fade-up" style="font-family: 'Cinzel', serif; margin-bottom: -10px; color: white;">RSVP &</h2>
