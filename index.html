@@ -691,7 +691,7 @@ width: 100%;
     width: 100%;
                 
                 z-index: 1; /* Agar konten tetap di atas */
-    padding: 50px 20px;
+    padding: 10px 20px;
     text-align: center;
     color: white;
 }
@@ -718,7 +718,7 @@ width: 100%;
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .footer-socials a {
@@ -970,7 +970,7 @@ width: 100%;
     <section id="rsvp" >
     <h2 data-aos="fade-up" style="font-family: 'Cinzel', serif; margin-bottom: -10px; color: white;">RSVP &</h2>
     <h2 data-aos="fade-up" style="font-family: 'Ephesis', cursive; margin-bottom: 10px; color: white;"> Ucapan</h2>
-        <p data-aos="zoom-out" style="color: white; font-size: 0.8rem;">konfirmasi kehadiran & Ucapan selamat</p>
+        <p data-aos="zoom-out" style="color: white; font-size: 1rem;">konfirmasi kehadiran & Ucapan selamat</p>
     <div class="rsvp-container"  data-aos="zoom-in">
         <h3 id="commentCount" style="color: #000; font-family: sans-serif; margin-bottom: 20px;">0 Comments</h3>
         
@@ -1029,7 +1029,7 @@ width: 100%;
 <section class="gift-section">
     <h2 data-aos="fade-up" style="font-family: 'Cinzel', serif; margin-bottom: -10px; color: white;"> Wedding</h2>
     <h2 data-aos="fade-up" style="font-family: 'Ephesis', cursive; margin-bottom: 10px; color: white;"> Gift</h2>
-    <p data-aos="fade-up" style="margin-bottom: 10px; font-size: 0.6rem; color: white;">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
+    <p data-aos="fade-up" style="margin-bottom: 10px; font-size: 0.8rem; color: white;">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
 
   
         <div class="gift-card" data-aos="fade-up">
@@ -1045,7 +1045,7 @@ width: 100%;
         </div>
 
         <div class="gift-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_Logo.svg" alt="BRI" class="bank-logo">
+            <img src="https://www.freelogovectors.net/wp-content/uploads/2023/02/bri-logo-freelogovectors.net_.png" alt="BRI" class="bank-logo">
             <div class="bank-info">
                 <p>Bank Rakyat Indonesia (BRI)</p>
                 <p class="account-number" id="no-rek-2">0987654321</p>
@@ -1056,8 +1056,16 @@ width: 100%;
             </button>
     </div>
 </section>
-<section class="mempelai-sectiont" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80');">
+<section class="mempelai-sectiont" style="    position: relative;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('Images/bg-foot.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; 
+    color: #ffffff;
+    text-align: center;
+overflow-x: hidden; width: 100%; ">
         <div class="couple-container">
             <div class="couple-profile"  data-aos="zoom-in">
                 <div class="couple-img-container couple-img-outer">
@@ -1154,9 +1162,9 @@ width: 100%;
             div.style.padding = "15px 0";
             div.style.borderBottom = "1px solid #ddd";
             div.innerHTML = `
-                <div style="font-weight: bold; font-size: 1rem; color: #000;">${data.pengirim}</div>
-                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;">${data.pesan}</div>
-                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i>${tgl}</small>
+                <div style="font-weight: bold; font-size: 1rem; color: #000;"></div>
+                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;"></div>
+                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i></small>
             `;
             container.appendChild(div);
         });
