@@ -427,6 +427,18 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
     transition: transform 0.5s ease-in-out;
 }
 
+
+  .gallery-item:nth-last-child(2)
+   {
+    grid-column: span 2;
+    aspect-ratio: 4 / 5; 
+   }
+/* Mengatur agar jika ada foto terakhir yang sendirian, dia akan melebar */
+.gallery-item:last-child
+   {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9; /* Ubah rasio jadi landscape agar tidak terlalu tinggi */
+}      
 /* Efek Zoom saat di-hover (opsional, untuk desktop) */
 .gallery-item:hover img {
     transform: scale(1.05);
@@ -1298,8 +1310,7 @@ overflow-x: hidden; width: 100%; ">
             "Images/G-5.png",
             "Images/G-6.png",
             "Images/G-7.png",
-            "Images/G-8.jpeg",
-            "Images/G-9.png",
+            "Images/G-8.jpeg"
         ];
 
         function previewImage(index) {
