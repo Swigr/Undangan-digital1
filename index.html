@@ -691,7 +691,7 @@ width: 100%;
     width: 100%;
                 
                 z-index: 1; /* Agar konten tetap di atas */
-    padding: 50px 20px;
+    padding: 10px 20px;
     text-align: center;
     color: white;
 }
@@ -718,7 +718,7 @@ width: 100%;
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .footer-socials a {
@@ -961,10 +961,16 @@ width: 100%;
     <section>
         <h3>Galeri Foto</h3>
         <div class="gallery-grid" data-aos="zoom-in">
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600" onclick="previewImage(0)"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519225495810-751759228172?w=600" onclick="previewImage(1)"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600" onclick="previewImage(2)"></div>
-        </div>
+            <div class="gallery-item"><img src="Images/G-1.png" onclick="previewImage(0)"></div>
+            <div class="gallery-item"><img src="Images/G-2.png" onclick="previewImage(1)"></div>
+            <div class="gallery-item"><img src="Images/G-3.png" onclick="previewImage(2)"></div>
+         <div class="gallery-item"><img src="Images/G-4.png" onclick="previewImage(3)"></div>
+		  <div class="gallery-item"><img src="Images/G-5.png" onclick="previewImage(4)"></div>
+		   <div class="gallery-item"><img src="Images/G-6.png" onclick="previewImage(5)"></div>
+		    <div class="gallery-item"><img src="Images/G-7.png" onclick="previewImage(6)"></div>
+			 <div class="gallery-item"><img src="Images/G-8.png" onclick="previewImage(7)"></div>
+			  <div class="gallery-item"><img src="Images/G-9.png" onclick="previewImage(8)"></div>
+		</div>
     </section>
 
     <section id="rsvp" >
@@ -1191,9 +1197,15 @@ overflow-x: hidden; width: 100%; ">
         // Gallery Lightbox
         let currentImgIndex = 0;
         const galleryImages = [
-            "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800",
-            "https://images.unsplash.com/photo-1519225495810-751759228172?w=800",
-            "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800"
+            "Images/G-1.png",
+            "Images/G-2.png",
+            "Images/G-3.png",
+			"Images/G-4.png",
+			"Images/G-5.png",
+			"Images/G-6.png",
+			"Images/G-7.png",
+			"Images/G-8.png",
+			"Images/G-9.png",
         ];
 
         function previewImage(index) {
