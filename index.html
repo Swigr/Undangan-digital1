@@ -373,7 +373,7 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
 
         /* Styling Section Galeri Keseluruhan */
 .gallery-section {
-    padding: 60px 0; /* Padding atas-bawah, 0 kiri-kanan agar full-width */
+    padding: 60px 5px; /* Padding atas-bawah, 0 kiri-kanan agar full-width */
     background-color: #f9f6f2; /* Sesuaikan dengan background undangan Anda */
     overflow: hidden;
 }
@@ -406,7 +406,7 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 kolom sama rata */
-    gap: 1px; /* Jarak sangat tipis antar foto seperti di referensi */
+    gap: 5px; /* Jarak sangat tipis antar foto seperti di referensi */
     width: 100%;
 }
 
@@ -414,7 +414,7 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
 .gallery-item {
     width: 100%;
     /* Mengatur tinggi foto agar konsisten, sesuaikan jika perlu */
-    aspect-ratio: 1 / 1; /* Membuat foto menjadi kotak sempurna */
+    /* aspect-ratio: 1 / 1; /* Membuat foto menjadi kotak sempurna */
     overflow: hidden;
     cursor: pointer;
     position: relative;
@@ -1033,7 +1033,7 @@ width: 100%;
         <div class="gallery-header" data-aos="fade-up">
             <h2 class="gallery-title">Moment</h2>
             <h1 class="gallery-subtitle">Gallery</h1>      
-	<div class="gallery-container" style="Background: black;">
+    <div class="gallery-container" style="Background: black;">
         <div class="gallery-grid" data-aos="zoom-in">
             <div class="gallery-item">
                 <img src="Images/G-1.png" alt="Moment 1" onclick="previewImage(0)">
@@ -1053,17 +1053,17 @@ width: 100%;
             <div class="gallery-item">
                 <img src="Images/G-6.png" alt="Moment 6" onclick="previewImage(5)">
             </div>
-			<div class="gallery-item">
+            <div class="gallery-item">
                 <img src="Images/G-7.png" alt="Moment 7" onclick="previewImage(6)">
             </div>
-			<div class="gallery-item">
+            <div class="gallery-item">
                 <img src="Images/G-8.png" alt="Moment 8" onclick="previewImage(7)">
             </div>
-			<div class="gallery-item">
+            <div class="gallery-item">
                 <img src="Images/G-9.png" alt="Moment 9" onclick="previewImage(8)">
             </div>
             </div>
-	</div>
+    </div>
         <div class="gallery-quote" data-aos="fade-up">
             <p>“Loved you yesterday, love you still,<br>always have, always will.”</p>
         </div>
@@ -1265,9 +1265,9 @@ overflow-x: hidden; width: 100%; ">
             div.style.padding = "15px 0";
             div.style.borderBottom = "1px solid #ddd";
             div.innerHTML = `
-                <div style="font-weight: bold; font-size: 1rem; color: #000;"></div>
-                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;"></div>
-                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i></small>
+                <div style="font-weight: bold; font-size: 1rem; color: #000;">${data.pengirim}</div>
+                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;">${data.pesan}</div>
+                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i>${tgl}</small>
             `;
             container.appendChild(div);
         });
@@ -1297,12 +1297,12 @@ overflow-x: hidden; width: 100%; ">
             "Images/G-1.png",
             "Images/G-2.png",
             "Images/G-3.png",
-			"Images/G-4.png",
-			"Images/G-5.png",
-			"Images/G-6.png",
-			"Images/G-7.png",
-			"Images/G-8.png",
-			"Images/G-9.png",
+            "Images/G-4.png",
+            "Images/G-5.png",
+            "Images/G-6.png",
+            "Images/G-7.png",
+            "Images/G-8.png",
+            "Images/G-9.png",
         ];
 
         function previewImage(index) {
