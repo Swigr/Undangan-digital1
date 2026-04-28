@@ -305,18 +305,17 @@ overflow-x: hidden; width: 100%;
 
         /* --- Event --- */
      /* --- Style Waktu & Tempat Arch Style --- */
-        .fixed-bg {
-            position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('Images/Potret.jpg');
+        .event-section {
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
+                url('Images/bg-event.jpg'); /* Ganti dengan nama file foto lokal Anda */
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Berada di belakang konten */
-    will-change: transform;      
-/*overflow: visible !important; Membuat bentuk kubah (Arch) */
+    background-attachment: scroll;            
+padding: 100px 20px;
+position: relative;
+             overflow-x: hidden; 
+             width: 100;
+overflow: visible !important;/* Membuat bentuk kubah (Arch) */
         }
 
 .std-title {
@@ -1057,7 +1056,6 @@ width: 100%;
 </section>
 
     <section class="event-section">
-        <div class="fixed-bg"></div>
     <h2 class="std-title">Save the</h2>
         <h1 class="std-subtitle">DATE</h1>
         <div class="event-grid">
@@ -1400,17 +1398,6 @@ overflow-x: hidden; width: 100%; ">
 </script>
 
     <script>
-window.addEventListener('scroll', function() {
-    const parallax = document.querySelectorAll('.event-section');
-    
-    parallax.forEach(section => {
-        let offset = window.pageYOffset;
-        // 0.3 adalah kecepatan gerak background, silakan sesuaikan
-        // Jika ingin background bergerak ke arah berlawanan, gunakan (offset * -0.3)
-        section.style.backgroundPositionY = (offset * 0.3) + "px";
-    });
-});
-        
         // Countdown
         const targetDate = new Date(2026, 11, 12, 8, 0, 0).getTime();
         setInterval(() => {
