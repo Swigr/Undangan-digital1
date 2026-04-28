@@ -307,7 +307,8 @@ overflow-x: hidden; width: 100%;
      /* --- Style Waktu & Tempat Arch Style --- */
 	 .fixed-bg {
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  clip-path: inset(0 0 0 0);
 }
 
         .fixed-bg::before {
@@ -321,7 +322,7 @@ overflow-x: hidden; width: 100%;
   background-size: cover;
   background-position: center;
   z-index: -1; /* Berada di belakang konten */
-  will-change: transform; /* Optimalisasi performa */
+  pointer-events: none;
         }
 
 .std-title {
@@ -1062,7 +1063,7 @@ width: 100%;
 </section>
 
     <section class="event-section">
-	<div class="fixed-bg"></div>
+	<div class="fixed-bg">
     <h2 class="std-title">Save the</h2>
         <h1 class="std-subtitle">DATE</h1>
         <div class="event-grid">
@@ -1109,7 +1110,8 @@ width: 100%;
                     <i class="fas fa-map-marker-alt"></i> Google Maps
                 </a>
             </div>
-    
+    </div>
+	</div>
         </div>
     </section>
     
