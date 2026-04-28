@@ -1496,7 +1496,7 @@ function createSnowflake() {
     snowflake.style.left = Math.random() * 100 + "vw";
     
     // Kecepatan jatuh acak (antara 5s sampai 15s)
-    const duration = Math.random() * 10 + 5 + "s";
+    const duration = Math.random() * 5 + 3 + "s";
     snowflake.style.animationDuration = duration;
     
     // Ukuran acak
@@ -1514,7 +1514,7 @@ function createSnowflake() {
 }
 
 // Buat salju setiap 300 milidetik
-setInterval(createSnowflake, 300);
+setInterval(createSnowflake, 800);
 
 
 
