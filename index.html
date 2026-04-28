@@ -305,7 +305,7 @@ overflow-x: hidden; width: 100%;
 
         /* --- Event --- */
      /* --- Style Waktu & Tempat Arch Style --- */
-        .event-section {
+        .fixed {
             position: fixed;
     top: 0;
     left: 0;
@@ -316,7 +316,7 @@ overflow-x: hidden; width: 100%;
     background-position: center;
     z-index: -1; /* Berada di belakang konten */
     will-change: transform;      
-overflow: visible !important;/* Membuat bentuk kubah (Arch) */
+/*overflow: visible !important; Membuat bentuk kubah (Arch) */
         }
 
 .std-title {
@@ -1057,6 +1057,7 @@ width: 100%;
 </section>
 
     <section class="event-section">
+        <div class="fixed-bg"></div>
     <h2 class="std-title">Save the</h2>
         <h1 class="std-subtitle">DATE</h1>
         <div class="event-grid">
