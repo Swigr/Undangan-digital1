@@ -305,17 +305,23 @@ overflow-x: hidden; width: 100%;
 
         /* --- Event --- */
      /* --- Style Waktu & Tempat Arch Style --- */
-        .event-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
-                url('Images/bg-event.jpg'); /* Ganti dengan nama file foto lokal Anda */
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;            
-padding: 100px 20px;
-position: relative;
-             overflow-x: hidden; 
-             width: 100;
-overflow: visible !important;/* Membuat bentuk kubah (Arch) */
+	 .fixed-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+        .fixed-bg::before {
+		content: "";
+  position: fixed; /* Mengunci posisi relatif terhadap layar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Images/bg-event.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Berada di belakang konten */
+  will-change: transform; /* Optimalisasi performa */
         }
 
 .std-title {
@@ -1056,6 +1062,7 @@ width: 100%;
 </section>
 
     <section class="event-section">
+	<div class="fixed-bg"></div>
     <h2 class="std-title">Save the</h2>
         <h1 class="std-subtitle">DATE</h1>
         <div class="event-grid">
