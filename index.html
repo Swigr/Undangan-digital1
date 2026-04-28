@@ -581,7 +581,7 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
             display: none; position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; height: 100%; 
             background: rgba(0,0,0,0.9); align-items: center; justify-content: center; 
         }
-        .lightbox img { max-width: 90%; max-height: 70%; border-radius: 8px; transform: scale(0.9); transition: 0.3s; }
+        .lightbox img { max-width: 70%; max-height: 70%; border-radius: 8px; transform: scale(0.9); transition: 0.3s; }
         .lightbox.active img { transform: scale(1); }
         .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
         .lightbox-btn { position: absolute; top: 50%; transform: translateY(-50%); color: white; background: rgba(0,0,0,0.3); border: none; padding: 15px; border-radius: 50%; cursor: pointer; }
@@ -666,8 +666,8 @@ width: 100%;
     margin-top: 30px; 
     text-align: left; 
     border-top: 1px solid #bbb; 
-    padding-top: 20px;
-    max-height: 400px;         /* Tinggi maksimal kolom komentar sebelum bisa di-slide */
+    padding: 10px;
+    max-height: 300px;         /* Tinggi maksimal kolom komentar sebelum bisa di-slide */
     overflow-y: auto;          /* Mengaktifkan scroll vertikal secara otomatis */
     padding-right: 10px;       /* Memberi ruang agar scrollbar tidak menempel ke teks */
 }
@@ -682,6 +682,44 @@ width: 100%;
     background: #eee;
 }
         
+.comment-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.comment-name {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #222;
+}
+
+.status-badge {
+    font-size: 0.8rem;
+}
+
+.comment-text {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.comment-time {
+    font-size: 0.75rem;
+    color: #999;
+}
 /* --- Style Opening Cover --- */
 #opening-cover {
     position: fixed;
@@ -821,7 +859,7 @@ width: 100%;
                 background-position: center;
                 background-repeat: no-repeat;
                 position: relative;
-    overflow-x: hidden; 
+    overflow: visible; 
     width: 100%;
                 
                 z-index: 1; /* Agar konten tetap di atas */
@@ -1129,7 +1167,7 @@ width: 100%;
                 <img src="Images/G-7.png" alt="Moment 7" onclick="previewImage(6)">
             </div>
             <div class="gallery-item">
-                <img src="Images/G-8.PNG" alt="Moment 8" onclick="previewImage(7)">
+                <img src="Images/G-8.PNG" alt="Moment 8" onclick="previewImage(7)" loading="lazy">
             </div>
             </div>
     </div>
@@ -1147,19 +1185,19 @@ width: 100%;
         <h3 id="commentCount" style="color: #000; font-family: sans-serif; margin-bottom: 20px;">0 Comments</h3>
         
         <div class="rsvp-stats">
-            <div class="stat-card">
-                <h4 id="countHadir">0</h4>
-                <p>Hadir</p>
-            </div>
-            <div class="stat-card">
-                <h4 id="countTidak">0</h4>
-                <p>Tidak Hadir</p>
-            </div>
-            <div class="stat-card">
-                <h4 id="countRagu">0</h4>
-                <p>Masih Ragu</p>
-            </div>
-        </div>
+    <div class="stat-card" style="border: 2px solid #000;">
+        <h4 id="countHadir">0</h4>
+        <p>Hadir</p>
+    </div>
+    <div class="stat-card" style="border: 2px solid #000;">
+        <h4 id="countTidak">0</h4>
+        <p>Tidak Hadir</p>
+    </div>
+    <div class="stat-card" style="border: 2px solid #000;">
+        <h4 id="countRagu">0</h4>
+        <p>Masih Ragu</p>
+    </div>
+</div>
 
         <form id="doaForm">
             <div class="form-group">
@@ -1252,7 +1290,7 @@ overflow-x: hidden; width: 100%; ">
     </section>
     
     <footer class="main-footer">
-        <div class="footer-logo" data-aos="zoom-out">
+        <div class="footer-logo" data-aos="fade-up">
             <img src="Images/Logo.PNG" alt="logo" class="logo-img">
             <p style="color: #00d2ff; font-weight: bold; margin-top: 5px;"data-aos="fade-up">SWIGR</p>
         </div>
@@ -1319,27 +1357,38 @@ overflow-x: hidden; width: 100%; ">
         document.getElementById('commentCount').innerText = ` Comments`;
 
         snap.forEach(doc => {
-            const data = doc.data();
-            
-            // Hitung Statistik
-            if(data.konfirmasi === "Hadir") hadir++;
-            else if(data.konfirmasi === "Tidak Hadir") tidak++;
-            else if(data.konfirmasi === "Masih Ragu") ragu++;
+    const data = doc.data();
+    
+    // Hitung Statistik
+    if(data.konfirmasi === "Hadir") hadir++;
+    else if(data.konfirmasi === "Tidak Hadir") tidak++;
+    else if(data.konfirmasi === "Masih Ragu") ragu++;
 
+    // Logika Ikon Status Kehadiran
+    let statusIcon = '';
+    if(data.konfirmasi === "Hadir") {
+        statusIcon = '<i class="fas fa-check-circle" style="color: #28a745;"></i>';
+    } else if(data.konfirmasi === "Tidak Hadir") {
+        statusIcon = '<i class="fas fa-times-circle" style="color: #dc3545;"></i>';
+    } else {
+        statusIcon = '<i class="fas fa-question-circle" style="color: #ffc107;"></i>';
+    }
             // Format Waktu Sederhana
-            const tgl = data.waktu ? data.waktu.toDate().toLocaleString('id-ID', {day:'numeric', month:'short', hour:'2-digit', minute:'2-digit'}) : "Baru saja";
+            const tgl = data.waktu ? data.waktu.toDate().toLocaleString('id-ID', {day:'numeric', month:'short', year:'numeric'}) : "Baru saja";
             
             // Render Komentar sesuai referensi gambar Anda
             const div = document.createElement('div');
-            div.style.padding = "15px 0";
-            div.style.borderBottom = "1px solid #ddd";
-            div.innerHTML = `
-                <div style="font-weight: bold; font-size: 1rem; color: #000;">${data.pengirim}</div>
-                <div style="font-size: 0.85rem; color: #333; margin: 5px 0;">${data.pesan}</div>
-                <small style="color: #999; font-size: 0.7rem;"><i class="fas fa-clock"></i>${tgl}</small>
-            `;
-            container.appendChild(div);
-        });
+    div.className = "comment-card";
+    div.innerHTML = `
+        <div class="comment-header">
+            <span class="comment-name">${data.pengirim}</span>
+            <span class="status-badge">${statusIcon}</span>
+        </div>
+        <div class="comment-text">${data.pesan}</div>
+        <div class="comment-time"><i class="far fa-clock"></i> ${tgl}</div>
+    `;
+    container.appendChild(div);
+});
 
         // Update angka di kotak statistik
         document.getElementById('countHadir').innerText = hadir;
