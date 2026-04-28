@@ -1397,6 +1397,17 @@ overflow-x: hidden; width: 100%; ">
 </script>
 
     <script>
+window.addEventListener('scroll', function() {
+    const parallax = document.querySelectorAll('.event-section');
+    
+    parallax.forEach(section => {
+        let offset = window.pageYOffset;
+        // 0.3 adalah kecepatan gerak background, silakan sesuaikan
+        // Jika ingin background bergerak ke arah berlawanan, gunakan (offset * -0.3)
+        section.style.backgroundPositionY = (offset * 0.3) + "px";
+    });
+});
+        
         // Countdown
         const targetDate = new Date(2026, 11, 12, 8, 0, 0).getTime();
         setInterval(() => {
