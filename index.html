@@ -89,6 +89,24 @@
         header h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 5.5rem); margin: 10px 0; }
         header h2 { font-family: 'Cinzel', serif; letter-spacing: 5px; font-size: 1.1rem; }
         
+html, body {
+            overflow-x: hidden; /* Mencegah geser ke samping */
+            overflow-y: visible !important; /* Memaksa scroll vertikal tetap ada */
+            height: auto;
+            -webkit-overflow-scrolling: touch; /* Membuat scroll di iOS lebih smooth */
+        }
+        
+        /* Memastikan scrollbar tetap terlihat (Opsional) */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        
         .countdown-container { 
     display: flex; 
     gap: 30px; 
@@ -305,25 +323,36 @@ overflow-x: hidden; width: 100%;
 
         /* --- Event --- */
      /* --- Style Waktu & Tempat Arch Style --- */
-	 .fixed-bg {
+     .fixed-bg {
   position: relative;
   width: 100%;
   clip-path: inset(0 0 0 0);
 }
 
         .fixed-bg::before {
-		content: "";
+        content: "";
   position: fixed; /* Mengunci posisi relatif terhadap layar */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('Images/Bg-rsvp.jpg');
+  background-image: url('Images/bg-event.jpg');
   background-size: cover;
   background-position: center;
-  z-index: -1; /* Berada di belakang konten */
+  z-index: -2; /* Berada di belakang konten */
   pointer-events: none;
+            will-change: transform;
         }
+.fixed-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Warna putih dengan transparansi 50% */
+    z-index: -1; /* Di atas background, tapi di bawah konten teks */
+}
 
 .std-title {
     font-family: 'Herr Von Muellerhoff', cursive;
@@ -368,6 +397,7 @@ overflow-x: hidden; width: 100%;
         }
             .arch-bottom {
 border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
+                margin-bottom: 20px;
             }
         
         .event-card img.icon-event {
@@ -598,32 +628,16 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
         .btn-action { background: rgba(255,255,255,0.2); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.3); }
 
         /* --- RSVP & Doa --- */
-		#rsvp {
-		 position: relative;
-  width: 100%;
-  clip-path: inset(0 0 0 0);
-  overflow-x: hidden;
-		}
-    #rsvp::before { 
-	content: "";
-  position: fixed; /* Mengunci posisi relatif terhadap layar */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('Images/bg-event.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: -1; /* Berada di belakang konten */
-  pointer-events: none;
-  overflow-x: hidden;
+         #rsvp { background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('Images/Bg-rsvp.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+padding: 80px 20px;
+width: 100%;
+        position: relative;
+        overflow-x: hidden;
     }
-    .std-title-rsvp {
-    font-family: 'Herr Von Muellerhoff', cursive;
-    font-size: clamp(3.5rem, 8vw, 4.5rem);
-    color: white;
-    margin-bottom: 10px;
-}
 
 .std-subtitle-rsvp {
     font-family: 'Cinzel', serif;
@@ -859,6 +873,7 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
     animation-name: fall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    will-change: transform;
 }
 
 @keyframes fall {
@@ -1031,13 +1046,12 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
             <div class="couple-profile" data-aos="fade-right">
                 
                 <div class="couple-img-container couple-img-outer">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Romeo" class="couple-img">
+                    <img src="Images/Pria.png" alt="Romeo" class="couple-img">
                 </div>
                 <h3 style="font-size: 1.5rem;">Fredy Supriadi</h3>
                 <p>Putra dari Bapak Montague <br> & Ibu Montague</p>
                 <div class="sosmed-link">
                     <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com/username" target="_blank"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
     <div class="divider-mempelai" data-aos="zoom-out">
@@ -1048,13 +1062,12 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
  <h1 data-aos="zoom-out" style="color: white; font-size: 3rem; font-weight: 800; font-family: 'Herr Von Muellerhoff', cursive;">The Bride</h1>
             <div class="couple-profile" data-aos="fade-left">
                 <div class="couple-img-container couple-img-outer">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="Juliet" class="couple-img">
+                    <img src="Images/Wanita.png" alt="Juliet" class="couple-img">
                 </div>
                 <h3 style="font-size: 1.5rem;">Sri Wahyuningsih</h3>
                 <p>Putri dari Bapak Capulet <br> & Ibu Capulet</p>
                 <div class="sosmed-link">
                     <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://tiktok.com/@username" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
@@ -1073,7 +1086,7 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
 </section>
 
   
-	<div class="fixed-bg">
+    <div class="fixed-bg">
     <h2 class="std-title">Save the</h2>
         <h1 class="std-subtitle">DATE</h1>
         <div class="event-grid">
@@ -1121,7 +1134,7 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
                 </a>
             </div>
     </div>
-	</div>
+    </div>
         </div>
 
     
@@ -1400,11 +1413,11 @@ overflow-x: hidden; width: 100%; ">
     div.className = "comment-card";
     div.innerHTML = `
         <div class="comment-header">
-            <span class="comment-name">${data.pengirim}</span>
-            <span class="status-badge">${statusIcon}</span>
+            <span class="comment-name"></span>
+            <span class="status-badge"></span>
         </div>
-        <div class="comment-text">${data.pesan}</div>
-        <div class="comment-time"><i class="far fa-clock"></i> ${tgl}</div>
+        <div class="comment-text"></div>
+        <div class="comment-time"><i class="far fa-clock"></i> </div>
     `;
     container.appendChild(div);
 });
@@ -1527,11 +1540,11 @@ function copyText(id) {
     
     // Aktifkan scroll
     document.body.style.overflow = 'visible';
-    document.documentElement.style.overflow = 'visible';
+document.documentElement.style.overflow = 'visible';
 }
 
 
-    // Fungsi salin nomor rekening
+    //Fungsi salin nomor rekening
     function copyText(id) {
         const text = document.getElementById(id).innerText;
         navigator.clipboard.writeText(text).then(() => {
@@ -1604,11 +1617,13 @@ setInterval(createSnowflake, 800);
     </script>
 <script>
       AOS.init({
-        duration: 1000, // Durasi animasi (dalam milidetik)
-        once: true,     // Animasi hanya berjalan sekali saat scroll ke bawah
+          disableMutationObserver: false,
+          offset: 100,
+        duration: 800, // Durasi animasi (dalam milidetik)
+        easing: 'ease-out-quad',
+        once: true     // Animasi hanya berjalan sekali saat scroll ke bawah
       });
     </script>
     
     
 </body>
-</html>
