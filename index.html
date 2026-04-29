@@ -323,6 +323,7 @@ overflow-x: hidden; width: 100%;
   background-position: center;
   z-index: -2; /* Berada di belakang konten */
   pointer-events: none;
+			will-change: transform;
         }
 .fixed-bg::after {
     content: "";
@@ -854,6 +855,7 @@ width: 100%;
     animation-name: fall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+	will-change: transform;
 }
 
 @keyframes fall {
