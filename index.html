@@ -1413,11 +1413,11 @@ overflow-x: hidden; width: 100%; ">
     div.className = "comment-card";
     div.innerHTML = `
         <div class="comment-header">
-            <span class="comment-name"></span>
-            <span class="status-badge"></span>
+            <span class="comment-name">${data.pengirim}</span>
+            <span class="status-badge">${statusIcon}</span>
         </div>
-        <div class="comment-text"></div>
-        <div class="comment-time"><i class="far fa-clock"></i> </div>
+        <div class="comment-text">${data.pesan}</div>
+        <div class="comment-time"><i class="far fa-clock"></i>${tgl}</div>
     `;
     container.appendChild(div);
 });
