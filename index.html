@@ -321,9 +321,19 @@ overflow-x: hidden; width: 100%;
   background-image: url('Images/bg-event.jpg');
   background-size: cover;
   background-position: center;
-  z-index: -1; /* Berada di belakang konten */
+  z-index: -2; /* Berada di belakang konten */
   pointer-events: none;
         }
+.fixed-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Warna putih dengan transparansi 50% */
+    z-index: -1; /* Di atas background, tapi di bawah konten teks */
+}
 
 .std-title {
     font-family: 'Herr Von Muellerhoff', cursive;
@@ -1015,13 +1025,12 @@ width: 100%;
             <div class="couple-profile" data-aos="fade-right">
                 
                 <div class="couple-img-container couple-img-outer">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Romeo" class="couple-img">
+                    <img src="Images/Pria.png" alt="Romeo" class="couple-img">
                 </div>
                 <h3 style="font-size: 1.5rem;">Fredy Supriadi</h3>
                 <p>Putra dari Bapak Montague <br> & Ibu Montague</p>
                 <div class="sosmed-link">
                     <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com/username" target="_blank"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
     <div class="divider-mempelai" data-aos="zoom-out">
@@ -1032,13 +1041,12 @@ width: 100%;
  <h1 data-aos="zoom-out" style="color: white; font-size: 3rem; font-weight: 800; font-family: 'Herr Von Muellerhoff', cursive;">The Bride</h1>
             <div class="couple-profile" data-aos="fade-left">
                 <div class="couple-img-container couple-img-outer">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="Juliet" class="couple-img">
+                    <img src="Images/Wanita.png" alt="Juliet" class="couple-img">
                 </div>
                 <h3 style="font-size: 1.5rem;">Sri Wahyuningsih</h3>
                 <p>Putri dari Bapak Capulet <br> & Ibu Capulet</p>
                 <div class="sosmed-link">
                     <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://tiktok.com/@username" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
