@@ -89,13 +89,13 @@
         header h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 5.5rem); margin: 10px 0; }
         header h2 { font-family: 'Cinzel', serif; letter-spacing: 5px; font-size: 1.1rem; }
         
-html, body {
+
+        html, body {
             overflow-x: hidden; /* Mencegah geser ke samping */
             overflow-y: visible !important; /* Memaksa scroll vertikal tetap ada */
             height: auto;
             -webkit-overflow-scrolling: touch; /* Membuat scroll di iOS lebih smooth */
         }
-        
         /* Memastikan scrollbar tetap terlihat (Opsional) */
         ::-webkit-scrollbar {
             width: 5px;
@@ -243,15 +243,14 @@ border: 2px solid #e0e0e0;
         .sosmed-link a { color: var(--gold); font-size: 1.2rem; transition: 0.3s; }
         .sosmed-link a:hover { transform: translateY(-3px); }
 
-
-section.mempelai-section::after {
+.garis::after {
     content: '';
     display: block;
     width: 80%;
     height: 1px;
     background: linear-gradient(to right, transparent, #ffffff, transparent);
     margin: 40px auto 0;
-    opacity: 0.3;
+    opacity: 0.3; 
 }
 
 /* Style untuk Garis Pemisah & */
@@ -260,8 +259,9 @@ section.mempelai-section::after {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin: 40px auto;
-    width: 80%;
+    margin-top: 40px;
+    margin-bottom: -40px;
+	width: 80%;
 }
 
 .line-mempelai {
@@ -327,21 +327,23 @@ overflow-x: hidden; width: 100%;
   position: relative;
   width: 100%;
   clip-path: inset(0 0 0 0);
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
         .fixed-bg::before {
+		content: "";
   position: fixed; /* Mengunci posisi relatif terhadap layar */
   top: 0;
   left: 0;
   width: 100%;
-  
   height: 100%;
   background-image: url('Images/bg-event.jpg');
   background-size: cover;
   background-position: center;
   z-index: -2; /* Berada di belakang konten */
   pointer-events: none;
-            will-change: transform;
+			will-change: transform;
         }
 .fixed-bg::after {
     content: "";
@@ -354,10 +356,12 @@ overflow-x: hidden; width: 100%;
     z-index: -1; /* Di atas background, tapi di bawah konten teks */
 }
 
+
 .std-title {
     font-family: 'Herr Von Muellerhoff', cursive;
     font-size: clamp(3.5rem, 8vw, 4.5rem);
     color: #2c2c2c;
+	margin-top: 20px;
     margin-bottom: -30px;
 }
 
@@ -1059,8 +1063,11 @@ width: 100%;
         <span class="ampersand">&</span>
         <div class="line-mempelai"></div>
     </div>
- <h1 data-aos="zoom-out" style="color: white; font-size: 3rem; font-weight: 800; font-family: 'Herr Von Muellerhoff', cursive;">The Bride</h1>
-            <div class="couple-profile" data-aos="fade-left">
+	</section>
+	 <section class="mempelai-section">
+ <h2 data-aos="zoom-out" style="color: white; font-size: 3rem; font-weight: 800; font-family: 'Herr Von Muellerhoff', cursive;">The Bride</h2>
+             <div class="couple-container garis">
+			<div class="couple-profile" data-aos="fade-left">
                 <div class="couple-img-container couple-img-outer">
                     <img src="Images/Wanita.png" alt="Juliet" class="couple-img">
                 </div>
@@ -1086,7 +1093,7 @@ width: 100%;
 </section>
 
   
-    <section class="fixed-bg">
+    <div class="fixed-bg">
     <h2 class="std-title">Save the</h2>
         <h1 class="std-subtitle">DATE</h1>
         <div class="event-grid">
@@ -1134,7 +1141,8 @@ width: 100%;
                 </a>
             </div>
     </div>
-    </section>
+	</div>
+        </div>
         
 
     
