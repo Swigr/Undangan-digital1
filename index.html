@@ -13,9 +13,18 @@
  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400&family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap" rel="stylesheet">
+	
+	<style>
         :root {
             --gold: #c5a059;
             --dark: #2c2c2c;
@@ -133,22 +142,32 @@
         .ornament { color: var(--gold); font-size: 2rem; margin-bottom: 10px; }
 
 /* Judul We Are Getting Married */
+
+section.opening-section{
+	background: #000; 
+	padding: 30px 20px; 
+	overflow-x: hidden; 
+	width: 100%; 
+	position: relative;
+}
 .married-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 2rem;
+    letter-spacing: 2px;
    color: #fff;
-    margin-bottom: -20px; /* Menempelkan dengan tulisan Married */
+   padding-top: 0px;
+   margin-left: -50px;
+    margin-bottom: -40px; /* Menempelkan dengan tulisan Married */
 }
 
 .married-script {
-    font-family: 'Herr Von Muellerhoff', cursive;
+    font-family: "Hurricane", cursive;
     font-size: 5rem;
     justify-content: flex-start;
     color: #fff;
-    lefth: -50px;
+    margin-left: 60px;
     margin-bottom: 20px;
 }
 
@@ -186,8 +205,12 @@ width: 100%;
             z-index: 1; /* Agar konten tetap di atas */
         }
         
-section.mempelai-section h3 {
-            color: #ffffff; /* Mengubah "Mempelai Pengantin" jadi putih */
+section.mempelai-section h1 {
+		   font-family: "Hurricane", cursive;
+           color: white; 
+		   font-size: 3rem; 
+		   font-weight: 700; 
+		   font-style: normal;
         }
 section.mempelai-section .couple-profile p {
             color: #e0e0e0; /* Putih keabu-abuan agar elegan */
@@ -204,6 +227,7 @@ section.mempelai-section .couple-profile p {
     border-radius: 100px; 
     padding: 0px; 
     box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+	margin-top: 70px;
     margin-bottom: 20px;
     width: fit-content; /* Mengikuti ukuran gambar di dalamnya */
 }
@@ -358,18 +382,22 @@ overflow-x: hidden; width: 100%;
 
 
 .std-title {
-    font-family: 'Herr Von Muellerhoff', cursive;
-    font-size: clamp(3.5rem, 8vw, 4.5rem);
+    font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
     color: #2c2c2c;
+	margin-left: -50px;
 	margin-top: 20px;
     margin-bottom: -30px;
 }
 
 .std-subtitle {
-    font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
-    letter-spacing: 8px;
+    font-family: "Hurricane", cursive;
+    font-size: 3rem;
+	 font-weight: 400;
     color: #2c2c2c;
+	margin-left: 60px;
     margin-bottom: 20px;
 }
         
@@ -476,21 +504,24 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
     position: relative;
 }
 
-.gallery-title {
-    font-family: 'Montserrat', sans-serif; /* Gunakan font sans-serif Anda */
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 1rem;
+.title {
+    font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
     color: #2c2c2c;
-    margin-bottom: -10px; /* Menempelkan dengan subtitle */
+	margin-left: -50px;
+	margin-top: 20px;
+    margin-bottom: -30px;
 }
 
-.gallery-subtitle {
-    font-family: 'Great Vibes', cursive; /* Gunakan font Latin/Script Anda */
-    font-size: 4rem;
+.subtitle {
+    font-family: "Hurricane", cursive;
+    font-size: 3rem;
+	 font-weight: 400;
     color: #2c2c2c;
-    margin: 0;
+	margin-left: 60px;
+    margin-bottom: 20px;
 }
 
 /* Styling Grid Foto */
@@ -1023,10 +1054,10 @@ width: 100%;
     </div>
   </div>
     </header>
-<section class="opening-section" id="opening-trigger" style="background: #000; padding: 100px 20px; overflow-x: hidden; width: 100%; position: relative;">
+<section class="opening-section" id="opening-trigger">
     
     <div style="margin-bottom: 50px;">
-        <h2 class="married-title" data-aos="fade-right">We Are Getting</h2>
+        <h1 class="married-title" data-aos="fade-right">We Are Getting</h1>
         <h1 class="married-script" data-aos="fade-left">Married</h1>
         
         <div class="divider-container" data-aos="zoom-in">
@@ -1039,13 +1070,13 @@ width: 100%;
     <div class="opening-text" id="opening-content" style="color: #fff; font-family: 'Montserrat', sans-serif;" data-aos="zoom-in">
         <p style="margin-bottom: 20px; font-style: normal; letter-spacing: 1px;">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
         
-        <p style="font-style: italic; font-weight: 300; max-width: 600px; margin: 0 auto; line-height: 1.8;">
+        <p style="font-style: italic; font-weight: 300; max-width: 600px; margin: 0 auto; line-height: 1.5;">
             Dengan memohon rahmat dan ridho Allah SWT, Kami Mengundang Bapak/Ibu/Saudara/i, untuk menghadiri acara pernikahan kami.
         </p>
     </div>
 </section>
   <section class="mempelai-section">
-        <h1 data-aos="zoom-out" style="color: white; font-size: 3rem; font-weight: 800; font-family: 'Herr Von Muellerhoff', cursive;">The Groom</h1>
+        <h1 data-aos="zoom-out">The Groom</h1>
         <div class="couple-container">
             <div class="couple-profile" data-aos="fade-right">
                 
@@ -1065,7 +1096,7 @@ width: 100%;
     </div>
 	</section>
 	 <section class="mempelai-section">
- <h2 data-aos="zoom-out" style="color: white; font-size: 3rem; font-weight: 800; font-family: 'Herr Von Muellerhoff', cursive;">The Bride</h2>
+ <h1 data-aos="zoom-out">The Bride</h1>
              <div class="couple-container garis">
 			<div class="couple-profile" data-aos="fade-left">
                 <div class="couple-img-container couple-img-outer">
@@ -1094,8 +1125,8 @@ width: 100%;
 
   
     <div class="fixed-bg">
-    <h2 class="std-title">Save the</h2>
-        <h1 class="std-subtitle">DATE</h1>
+    <h2 class="std-title">Save The</h2>
+        <h1 class="std-subtitle">Date</h1>
         <div class="event-grid">
             <div class="event-card arch-top" data-aos="fade-up">
                 <div class="ornament" style="color: white; font-size: 3rem; margin-bottom: 0;">𓇚</div>
@@ -1148,8 +1179,8 @@ width: 100%;
     
     
 <section class="timeline-section" id="story">
-    <h2 class="gallery-title" data-aos="zoom-out" style="color: white;">Our Love</h2>
-    <h1 class="gallery-subtitle" style="color: white;" data-aos="zoom-in">Storry</h1>
+    <h2 class="title" data-aos="zoom-out" style="color: white;">Our Love</h2>
+    <h1 class="subtitle" style="color: white;" data-aos="zoom-in">Storry</h1>
     <p style="color: white;" data-aos="zoom-in">Bagaimana semua ini dimulai...</p>
 
     <div class="timeline">
@@ -1181,8 +1212,8 @@ width: 100%;
 
    <section id="gallery" class="gallery-section">
         <div class="gallery-header" data-aos="fade-up">
-            <h2 class="gallery-title">Moment</h2>
-            <h1 class="gallery-subtitle">Gallery</h1>      
+            <h2 class="title">Moment</h2>
+            <h1 class="subtitle">Gallery</h1>      
     <div class="gallery-container" style="Background: black; padding: 5px;">
         <div class="gallery-grid" data-aos="zoom-in">
             <div class="gallery-item">
@@ -1218,8 +1249,8 @@ width: 100%;
 </section>
 
     <section id="rsvp" >
-    <h2 data-aos="fade-up" style="font-family: 'Cinzel', serif; margin-bottom: -10px; color: white;">RSVP &</h2>
-    <h2 data-aos="fade-up" style="font-family: 'Ephesis', cursive; margin-bottom: 10px; color: white;"> Ucapan</h2>
+    <h2 data-aos="fade-up" class="title" style="color: white;">RSVP &</h2>
+    <h1 data-aos="fade-up" class="subtitle" style="color: white;"> Ucapan</h1>
         <p data-aos="zoom-out" style="color: white; font-size: 1rem;">konfirmasi kehadiran & Ucapan selamat</p>
     <div class="rsvp-container"  data-aos="zoom-in">
         <h3 id="commentCount" style="color: #000; font-family: sans-serif; margin-bottom: 20px;">0 Comments</h3>
@@ -1277,8 +1308,8 @@ width: 100%;
     </div>
 
 <section class="gift-section">
-    <h2 data-aos="fade-up" style="font-family: 'Cinzel', serif; margin-bottom: -10px; color: white;"> Wedding</h2>
-    <h2 data-aos="fade-up" style="font-family: 'Ephesis', cursive; margin-bottom: 10px; color: white;"> Gift</h2>
+    <h2 data-aos="fade-up" class="title" style="; color: white;"> Wedding</h2>
+    <h1 data-aos="fade-up" class="subtitle" style="color: white"> Gift</h2>
     <p data-aos="fade-up" style="margin-bottom: 10px; font-size: 0.8rem; color: white;">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
 
   
