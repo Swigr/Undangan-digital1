@@ -584,73 +584,74 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
 
 
 /* --- Style Story Line / Timeline --- */
-.timeline-section {
-             position: relative;
-                 overflow-x: hidden; 
-                 width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('Images/bg-timeline.jpg'); /* Ganti dengan nama file foto Anda */
+.love-story-container {
+    background-image: url('Images/bg-timeline.png'); /* Latar belakang putih bersih */
     background-size: cover;
-    background-position: center;
-    background-attachment: scroll; /* Memberikan efek parallax saat di-scroll */
-}
-.timeline {
-    position: relative;
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 0 20px;
-    overflow-x: hidden; 
-    width: 100%;
-}
-/*
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background: var(--gold);
-    top: 0; bottom: 0; left: 50%;
-    margin-left: -1px;
-} */
-.timeline-item {
-    padding: 40px 20px;
-    position: relative;
-    background: inherit;
-    width: 100%;
+	background-position: right;
+	background-repeat: no-repeat;
+	padding: 60px 20px;
     text-align: center;
+    color: #333;
 }
-.timeline-item.left { left: 0; }
-.timeline-item.right { left: 50%; text-align: left; }
 
-.timeline-item::after {
-    content: '';
-    position: fixed;
-    
-    width: 70px; height: 70px;
-    background-color: white;
-    border: 3px solid var(--gold);
-    top: -7px; 
-    left: 120px;
-    border-radius: 50%; z-index: 1;
+.bride-groom-names {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 0;
 }
-.timeline-item.right::after { left: -80px; }
 
-.timeline-content {
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.story-subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    margin-top: -10px;
+    color: #888;
 }
-.timeline-content h4 { color: var(--gold); font-family: 'Cinzel', serif; margin-bottom: 5px; }
-.timeline-content span { font-size: 0.8rem; font-weight: bold; color: #888; }
-.timeline-content p { font-size: 0.85rem; margin-top: 10px; color: #666; }
 
-/* Responsif HP */
-/* @media screen and (max-width: 600px) {
-    .timeline::after { left: 30px; }
-    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
-    .timeline-item.right { left: 0%; }
-    .timeline-item::after { left: 23px; }
-} */
+/* Bingkai Melengkung (Arch Effect) */
+.arch-frame {
+    width: 85%;
+    margin: 30px auto;
+    border-radius: 150px 150px 20px 20px; /* Melengkung di atas saja */
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.arch-frame img {
+    width: 100%;
+    display: block;
+}
+
+.story-divider {
+    width: 1px;
+    height: 50px;
+    background-color: #333;
+    margin: 20px auto;
+}
+
+.love-story-title {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 5px;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.story-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    padding: 0 10px;
+    color: #666;
+    font-weight: 300;
+}
+
+.story-text p.quote {
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 40px;
+    color: #444;
+}
 
         /* --- Lightbox --- */
         .lightbox { 
@@ -1184,34 +1185,31 @@ width: 100%;
 
     
     
-<section class="timeline-section" id="story" style="padding-top: 20px;">
-    <h2 class="title" data-aos="zoom-out" style="color: white;">Our Love</h2>
-    <h1 class="subtitle" style="color: white;" data-aos="zoom-in">Storry</h1>
-    <p style="color: white;" data-aos="zoom-in">Bagaimana semua ini dimulai...</p>
+<section class="love-story-container" data-aos="fade-up">
+    <!-- Judul Atas -->
+    <div class="story-header">
+        <h2 class="bride-groom-names">Frendy & Pasangan</h2>
+        <h3 class="story-subtitle">Story</h3>
+    </div>
 
-    <div class="timeline">
-        <div class="timeline-item left" data-aos="fade-right" style="margin-top: 40px;">
-            <div class="timeline-content">
-                <span>Januari 2022</span>
-                <h4>Pertama Bertemu</h4>
-                <p>Berawal dari pertemuan tidak sengaja di sebuah toko buku, kami menyadari ada ketertarikan satu sama lain.</p>
-            </div>
-        </div>
+    <!-- Bingkai Gambar Melengkung (Arch) -->
+    <div class="arch-frame">
+        <img src="Images/Trans3.jpg" alt="Love Story Image">
+    </div>
 
-        <div class="timeline-item left" data-aos="fade-left">
-            <div class="timeline-content">
-                <span>Maret 2023</span>
-                <h4>Menjalin Kasih</h4>
-                <p>Setelah sekian lama mengenal, kami memutuskan untuk melangkah bersama dalam ikatan janji suci kekasih.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item left" data-aos="fade-left">
-            <div class="timeline-content">
-                <span>Mei 2026</span>
-                <h4>Lamaran</h4>
-                <p>Dihadapan kedua orang tua, kami memantapkan niat untuk membangun rumah tangga selamanya.</p>
-            </div>
+    <!-- Konten Cerita -->
+    <div class="story-content">
+        <div class="story-divider"></div>
+        <h4 class="love-story-title">LOVE STORY</h4>
+        
+        <div class="story-text">
+            <p>Pertemuan kami berawal dari tempat kerja. Kami dipertemukan secara tidak terduga sepertinya semesta memang sengaja merangkainnya,</p>
+            
+            <p>dari tatap yang tak sengaja, tumbuhlah percakapan sederhana, dari pertemanan, hadir kenyamanan.</p>
+            
+            <p>Singkat cerita kami saling komunikasi, perasaan yang awalnya samar perlahan tumbuh menjadi nyata, hingga akhirnya kami memutuskan untuk menjalin hubungan.</p>
+            
+            <p class="quote">"Apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu."</p>
         </div>
     </div>
 </section>
@@ -1255,7 +1253,7 @@ width: 100%;
 </section>
 
     <section id="rsvp" >
-    <h2 data-aos="fade-up" class="title" style="color: white;">RSVP &</h2>
+    <h2 data-aos="fade-up" class="title" style="color: white;">Rsvp &</h2>
     <h1 data-aos="fade-up" class="subtitle" style="color: white;"> Ucapan</h1>
         <p data-aos="zoom-out" style="color: white; font-size: 1rem; margin-bottom: 10px;">konfirmasi kehadiran & Ucapan selamat</p>
     <div class="rsvp-container"  data-aos="zoom-in">
