@@ -584,25 +584,38 @@ border-radius: 20px 20px 200px 200px; /* Membuat bentuk kubah (Arch) */
 
 
 /* --- Style Story Line / Timeline --- */
-.love-story-container {
+.love-story {
     background-image: url('Images/bg-timeline.png'); /* Latar belakang putih bersih */
     background-size: cover;
-	background-position: right;
+	background-position: center;
 	background-repeat: no-repeat;
-	padding: 60px 20px;
-    text-align: center;
+	padding: 5px 5px;
+	z-index: -1;
+    
+}
+
+.story-container {
+	background-color: white;
+	padding: 20px 20px;
+	margin: 20px;
+	border-radius: 10px;
+	text-align: center;
     color: #333;
+	z-index: 0;
 }
 
 .bride-groom-names {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    color: #555;
-    margin-bottom: 0;
+    font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+    color: #2c2c2c;
+    margin-top: 20px;
+    margin-bottom: -30px;
 }
 
 .story-subtitle {
-    font-family: 'Great Vibes', cursive;
+    font-family: "Hurricane", cursive;
     font-size: 1.5rem;
     margin-top: -10px;
     color: #888;
@@ -1185,11 +1198,12 @@ width: 100%;
 
     
     
-<section class="love-story-container" data-aos="fade-up">
+<section class="love-story">
     <!-- Judul Atas -->
+	<div class="story-container data-aos="fade-up">
     <div class="story-header">
-        <h2 class="bride-groom-names">Frendy & Pasangan</h2>
-        <h3 class="story-subtitle">Story</h3>
+        <h2 class="bride-groom-names">Fredy & Cici</h2>
+        <h2 class="subtitle">Story</h2>
     </div>
 
     <!-- Bingkai Gambar Melengkung (Arch) -->
@@ -1212,6 +1226,7 @@ width: 100%;
             <p class="quote">"Apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu."</p>
         </div>
     </div>
+	</div>
 </section>
 
    <section id="gallery" class="gallery-section">
