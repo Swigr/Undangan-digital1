@@ -593,10 +593,56 @@
             color: #4a4a4a;
         }
         .story-content {
+			max-width: 450px; /* Membatasi lebar teks agar pas di layar HP & tidak melar */
+			margin: 0 auto;
             padding: 0 20px;
-            text-align: center;
             color: #4a4a4a;
         }
+		
+		.story-block {
+    text-align: justify; /* Membuat teks rata kanan-kiri yang rapi */
+    margin-bottom: 35px; /* Jarak yang cukup antar bab cerita */
+}
+
+.story-block h3 {
+    font-family: 'Playfair Display', serif; /* Font elegan untuk sub-judul */
+    font-size: 1.2rem;
+    color: #6A371B; /* Warna tema mahogani */
+    margin-bottom: 12px;
+    text-align: left; /* Sub-judul rata kiri mengikuti teks */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.story-block p {
+    font-size: 0.9rem;
+    line-height: 1.7; /* Memberi ruang udara antar baris kalimat */
+    color: #555;
+    margin-bottom: 10px; /* Jarak antar paragraf di dalam satu bab */
+}
+
+/* Style untuk Kutipan Ali Bin Abi Thalib */
+.quote-ali {
+    margin-top: 40px;
+    font-style: italic;
+    color: #6A371B;
+    background-color: #FDFBF7; /* Background box tipis agar menonjol */
+    padding: 20px;
+    border-left: 3px solid #6A371B; /* Garis aksen di sebelah kiri */
+    border-radius: 4px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.quote-ali span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 8px;
+    color: #888;
+    font-style: normal;
+}
 
         /* Section RSVP Kehadiran */
         .rsvp-section {
@@ -1430,18 +1476,28 @@
         </div>
 
         <div class="story-content">
-            <p data-aos="fade-up" data-aos-delay="200"><strong>Awal Bertemu</strong></p>
-			<p data-aos="fade-up" data-aos-delay="300">Kami dipertemukan secara tidak terduga di tempat kerja, sepertinya semesta memang sengaja merangkainya, dari tatap yang tak sengaja, tumbuhlah percakapan sederhana, dari pertemanan hadir kenyamanan.</p>
-            <p data-aos="fade-up" data-aos-delay="400">akhirnya kami memutuskan untuk menjalin hubungan. Namun takdir sempat memisahkan kami tetapi takdir pula yang menyatukan kami kembali.</p>
-            <p data-aos="fade-up" data-aos-delay="600"><strong>Lamaran</strong></p>
-            <p data-aos="fade-up" data-aos-delay="700">Sampai akhirnya kami kembali dan saling meyakinkan, bersama kami belajar, tumbuh dan saling menguatkan dalam setiap proses yang kami jalani. Setelah 6 Tahun menjalin hubungan, akhirnya pada tanggal *21 Juni 2026* kami memutuskan mengikat hubungan yang disaksikan oleh keluarga besar untuk bersiap kejenjang yang lebih serius.</p>
-            <p data-aos="fade-up" data-aos-delay="800"><strong>Akad</strong> </p>
-            <p data-aos="fade-up" data-aos-delay="900">Hari ini dengan penuh syukur dan kebahagiaan, kami memulai babak baru. Bukan lagi sekedar “Aku” dan “Kamu”, tapi “Kita”.</p>
-            <p data-aos="fade-up" data-aos-delay="1000">Kami Percaya, bukan karna bertemu lalu berjodoh, melainkan karna berjodoh lah maka kami dipertemukan. Dan inilah kisah kami, yang kini berlanjut menjadi ikatan suci.</p> 
-            <div class="quote-ali" style="margin-top: 20px; font-style: italic; color: #666;" data-aos="fade-up">
-                Sebagaimana yang pernah dikatakan oleh Ali Bin Abi Thalib “ Apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu”.
-            </div>
-        </div>
+    <div class="story-block" data-aos="fade-up" data-aos-delay="200">
+        <h3>Awal Bertemu</h3>
+        <p>Kami dipertemukan secara tidak terduga di tempat kerja, sepertinya semesta memang sengaja merangkainya, dari tatap yang tak sengaja, tumbuhlah percakapan sederhana, dari pertemanan hadir kenyamanan.</p>
+        <p>Akhirnya kami memutuskan untuk menjalin hubungan. Namun takdir sempat memisahkan kami tetapi takdir pula yang menyatukan kami kembali.</p>
+    </div>
+
+    <div class="story-block" data-aos="fade-up" data-aos-delay="400">
+        <h3>Lamaran</h3>
+        <p>Sampai akhirnya kami kembali dan saling meyakinkan, bersama kami belajar, tumbuh dan saling menguatkan dalam setiap proses yang kami jalani. Setelah 6 Tahun menjalin hubungan, akhirnya pada tanggal <strong>21 Juni 2026</strong> kami memutuskan mengikat hubungan yang disaksikan oleh keluarga besar untuk bersiap kejenjang yang lebih serius.</p>
+    </div>
+
+    <div class="story-block" data-aos="fade-up" data-aos-delay="600">
+        <h3>Akad</h3>
+        <p>Hari ini dengan penuh syukur dan kebahagiaan, kami memulai babak baru. Bukan lagi sekedar “Aku” dan “Kamu”, tapi “Kita”.</p>
+        <p>Kami Percaya, bukan karna bertemu lalu berjodoh, melainkan karna berjodoh lah maka kami dipertemukan. Dan inilah kisah kami, yang kini berlanjut menjadi ikatan suci.</p>
+    </div>
+    
+    <div class="quote-ali" data-aos="fade-up" data-aos-delay="700">
+        “Apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu.”
+        <span>— Ali Bin Abi Thalib</span>
+    </div>
+</div>
     </div>
 </div>
 
